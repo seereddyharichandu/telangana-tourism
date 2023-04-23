@@ -219,7 +219,7 @@ projected_data AS (
     SELECT
         2025 AS year,
         COALESCE(SUM(total_visitors), 0) AS total_visitors,
-        ((SUM(total_visitors)/4)*(2025 -2019) ) AS projected_total_visitors,
+        ((SUM(total_visitors)/4) ) AS projected_total_visitors,
 		(((SUM(total_visitors)/4)*6 )/81)*80 as projected_domestic_visitors,
 		(((SUM(total_visitors)/4)*6 )/81)*1 as projected_foreign_visitors
     FROM historical_data
@@ -244,7 +244,7 @@ projected_data AS (
     SELECT
         2025 AS year,
         COALESCE(SUM(total_visitors), 0) AS total_visitors,
-        ((SUM(total_visitors)/4)*6 ) AS projected_total_visitors
+        ((SUM(total_visitors)/4) ) AS projected_total_visitors
     FROM historical_data
 ),
 revenue_data AS (
